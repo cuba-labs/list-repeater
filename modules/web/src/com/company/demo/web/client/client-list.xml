@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="Clients"
+        messagesPack="com.company.demo.web.client">
+    <data readOnly="true">
+        <collection id="clientsDc"
+                    class="com.company.demo.entity.Client"
+                    view="_local">
+            <loader id="clientsDl">
+                <query>
+                    <![CDATA[select e from demo_Client e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+
+    <layout expand="clientsDataGrid">
+        <dataGrid id="clientsDataGrid"
+                  width="100%"
+                  dataContainer="clientsDc"
+                  selectionMode="NONE"
+                  bodyRowHeight="75"
+                  headerVisible="false"
+                  columnsCollapsingAllowed="false">
+            <columns>
+                <column id="generatedCell"/>
+            </columns>
+        </dataGrid>
+    </layout>
+</window>
